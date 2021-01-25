@@ -1,9 +1,10 @@
-package com.coll.OnlineCollaborate.dao;
+package com.coll.OnlineCollaborate.service;
+
 import java.util.List;
 
 import com.coll.OnlineCollaborate.model.Blog;
 
-public interface IBlogDao {
+public interface IBlogService {
 
 	List<Blog> getAllBlogs();
 	List<Blog> getBlogsByStatus(String status);
@@ -13,5 +14,4 @@ public interface IBlogDao {
 	boolean addBlog(Blog blog);
 	boolean updateBlog(Blog blog);
 	boolean deleteBlog(Blog blog);
-	
 }

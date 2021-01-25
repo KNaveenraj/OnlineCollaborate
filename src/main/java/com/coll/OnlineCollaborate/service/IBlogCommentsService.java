@@ -1,10 +1,10 @@
-package com.coll.OnlineCollaborate.dao;
+package com.coll.OnlineCollaborate.service;
 
 import java.util.List;
 
 import com.coll.OnlineCollaborate.model.BlogComments;
 
-public interface IBlogCommentsDao {
+public interface IBlogCommentsService {
 
 	List<BlogComments> getAllBlogComments();
 	BlogComments getBlogCommentsById(int blogCommentId);
