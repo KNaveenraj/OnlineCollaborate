@@ -5,14 +5,19 @@ import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import org.springframework.stereotype.Component;
+
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+@Component
+@Entity
 public class Blog extends DomainResponse implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
@@ -27,7 +32,7 @@ public class Blog extends DomainResponse implements Serializable {
 	String username;
 	@OneToMany(mappedBy="blog",fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JsonManagedReference
-	List<BlogComments>blogComments;
+	List<BlogComments> blogComments;
 	
 	public int getBlogId() {
 		return blogId;

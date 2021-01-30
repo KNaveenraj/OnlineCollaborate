@@ -71,10 +71,10 @@ public class BlogDaoImpl implements IBlogDao {
 	}
 
 	@Override
-	public boolean deleteBlog(Blog blog) {
+	public boolean deleteBlog(Blog blogId) {
 		try
 		{
-			sessionFactory.getCurrentSession().delete(blog);
+			sessionFactory.getCurrentSession().delete(blogId);
 			return true;
 		}
 		catch(Exception ex)

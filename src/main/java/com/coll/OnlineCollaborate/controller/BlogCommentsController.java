@@ -24,23 +24,23 @@ public class BlogCommentsController {
 
 	@Autowired
 	IBlogCommentsService blogCommentsService;
-	@PostMapping("save-blogComments")
 	
+	@PostMapping("save-blogComments")
 	public boolean saveBlogComments(@RequestBody BlogComments blogComments)
 	{
 		return blogCommentsService.addBlogComments(blogComments);
 	}
 	
-	@GetMapping("blog-list")
+	@GetMapping("blogComments-list")
 	public List<BlogComments> allBlogComments()
 	{
 		return blogCommentsService.getAllBlogComments();
 	}
 	
-	@DeleteMapping("delete-blogComments/{blogComments}")
-	public boolean deleteBlogComments(@PathVariable("blogComments") BlogComments blogComments)
+	@DeleteMapping("delete-blogComments/{blogComment_id}")
+	public boolean deleteBlogComments(@PathVariable("blogComment_id") BlogComments blogComment_id)
 	{
-		return blogCommentsService.deleteBlogComments(blogComments);
+		return blogCommentsService.deleteBlogComments(blogComment_id);
 	}
 	
 	@GetMapping("blogComments/{blogComments_id}")

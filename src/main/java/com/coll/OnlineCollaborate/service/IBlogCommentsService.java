@@ -10,5 +10,5 @@ public interface IBlogCommentsService {
 	BlogComments getBlogCommentsById(int blogCommentId);
 	boolean addBlogComments(BlogComments blogComments);
 	boolean updateBlogComments(BlogComments blogComments);
-	boolean deleteBlogComments(BlogComments blogComments);
+	boolean deleteBlogComments(BlogComments blogCommentId);
 }

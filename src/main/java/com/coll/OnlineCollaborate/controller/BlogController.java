@@ -36,10 +36,10 @@ public class BlogController {
 		return blogService.getAllBlogs();
 	}
 	
-	@DeleteMapping("delete-blog/{blog}")
-	public boolean deleteBlog(@PathVariable("blog") Blog blog)
+	@DeleteMapping("delete-blog/{blog_id}")
+	public boolean deleteBlog(@PathVariable("blog_id") Blog blog_id)
 	{
-		return blogService.deleteBlog(blog);
+		return blogService.deleteBlog(blog_id);
 	}
 	
 	@GetMapping("blog/{blog_id}")

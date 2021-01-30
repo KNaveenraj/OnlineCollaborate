@@ -19,26 +19,31 @@ public class BlogCommentsServiceImpl implements IBlogCommentsService {
 
 	@Override
 	public List<BlogComments> getAllBlogComments() {
+		
 		return blogCommentsDao.getAllBlogComments();
 	}
 
 	@Override
 	public BlogComments getBlogCommentsById(int blogCommentId) {
+		
 		return blogCommentsDao.getBlogCommentsById(blogCommentId);
 	}
 
 	@Override
 	public boolean addBlogComments(BlogComments blogComments) {
+		
 		return blogCommentsDao.addBlogComments(blogComments);
 	}
 
 	@Override
 	public boolean updateBlogComments(BlogComments blogComments) {
+		
 		return blogCommentsDao.updateBlogComments(blogComments);
 	}
 
 	@Override
-	public boolean deleteBlogComments(BlogComments blogComments) {
-		return blogCommentsDao.deleteBlogComments(blogComments);
+	public boolean deleteBlogComments(BlogComments blogCommentId) {
+		
+		return blogCommentsDao.deleteBlogComments(blogCommentId);
 	}
 }

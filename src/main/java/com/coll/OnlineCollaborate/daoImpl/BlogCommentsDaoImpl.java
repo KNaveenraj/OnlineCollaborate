@@ -56,10 +56,10 @@ public class BlogCommentsDaoImpl implements IBlogCommentsDao{
 	}
 
 	@Override
-	public boolean deleteBlogComments(BlogComments blogComments) {
+	public boolean deleteBlogComments(BlogComments blogCommentId) {
 		try
 		{
-			sessionFactory.getCurrentSession().delete(blogComments);
+			sessionFactory.getCurrentSession().delete(blogCommentId);
 			return true;
 		}
 		catch(Exception ex)
