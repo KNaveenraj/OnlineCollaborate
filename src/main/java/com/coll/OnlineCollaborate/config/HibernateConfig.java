@@ -20,8 +20,11 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 						@ComponentScan("model"),
 						@ComponentScan("controller"),
 						@ComponentScan("dao"),
-						@ComponentScan("miscallaneous"),
-						@ComponentScan("service")})
+						@ComponentScan("daoImpl"),
+						@ComponentScan("config"),
+						@ComponentScan("service"),
+						@ComponentScan("serviceImpl")
+						})
 @EnableAutoConfiguration(exclude = {HibernateJpaAutoConfiguration.class})
 @EnableTransactionManagement
 public class HibernateConfig {

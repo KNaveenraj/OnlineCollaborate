@@ -8,8 +8,7 @@ public interface IBlogService {
 
 	List<Blog> getAllBlogs();
 	List<Blog> getBlogsByStatus(String status);
-	List<Blog> getUsersBlogs(int blogId);
-	List<Blog> mainList();
+	List<Blog> getUsersBlogs(int userId);
 	Blog getBlogById(int blogId);
 	boolean addBlog(Blog blog);
 	boolean updateBlog(Blog blog);

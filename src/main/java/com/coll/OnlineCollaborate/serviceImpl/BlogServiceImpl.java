@@ -30,13 +30,8 @@ public class BlogServiceImpl implements IBlogService {
 	}
 
 	@Override
-	public List<Blog> getUsersBlogs(int blogId) {
-		return blogDao.getUsersBlogs(blogId);
-	}
-
-	@Override
-	public List<Blog> mainList() {
-		return blogDao.mainList();
+	public List<Blog> getUsersBlogs(int userId) {
+		return blogDao.getUsersBlogs(userId);
 	}
 
 	@Override

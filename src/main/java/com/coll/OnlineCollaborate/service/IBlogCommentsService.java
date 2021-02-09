@@ -7,8 +7,10 @@ import com.coll.OnlineCollaborate.model.BlogComments;
 public interface IBlogCommentsService {
 
 	List<BlogComments> getAllBlogComments();
+	List<BlogComments> getCommnetsByBlogId(int blogId);
 	BlogComments getBlogCommentsById(int blogCommentId);
 	boolean addBlogComments(BlogComments blogComments);
 	boolean updateBlogComments(BlogComments blogComments);
 	boolean deleteBlogComments(BlogComments blogCommentId);
+	
 }

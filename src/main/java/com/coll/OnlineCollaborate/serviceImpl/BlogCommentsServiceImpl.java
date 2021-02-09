@@ -46,4 +46,10 @@ public class BlogCommentsServiceImpl implements IBlogCommentsService {
 		
 		return blogCommentsDao.deleteBlogComments(blogCommentId);
 	}
+
+	@Override
+	public List<BlogComments> getCommnetsByBlogId(int blogId) {
+		return blogCommentsDao.getCommnetsByBlogId(blogId);
+		
+	}
 }

@@ -32,9 +32,10 @@ public class BlogDaoImpl implements IBlogDao {
 	}
 
 	@Override
-	public List<Blog> getUsersBlogs(int blogId) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Blog> getUsersBlogs(int userId) {
+		String q="from Blog where userId='"+userId+"'";
+		Query query=sessionFactory.getCurrentSession().createQuery(q);
+		return query.getResultList();
 	}
 
 	@Override
@@ -84,10 +85,6 @@ public class BlogDaoImpl implements IBlogDao {
 		}
 	}
 
-	@Override
-	public List<Blog> mainList() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }

@@ -68,4 +68,10 @@ public class BlogCommentsDaoImpl implements IBlogCommentsDao{
 			return false;
 		}
 	}
+
+	@Override
+	public List<BlogComments> getCommnetsByBlogId(int blogId) {
+		return (List<BlogComments>) sessionFactory.getCurrentSession().get(BlogComments.class,Integer.valueOf(blogId));
+
+	}
 }
