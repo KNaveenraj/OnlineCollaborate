@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.coll.OnlineCollaborate.model.Blog;
+import com.coll.OnlineCollaborate.model.User;
 import com.coll.OnlineCollaborate.service.IBlogService;
-
 
 @RestController
 @CrossOrigin(origins="http://localhost:4200")
 @RequestMapping(value="/api")
 public class BlogController {
-	
+
 	@Autowired
 	IBlogService blogService;
 	
@@ -36,16 +36,15 @@ public class BlogController {
 		return blogService.getAllBlogs();
 	}
 	
-	@DeleteMapping("delete-blog/{blog_id}")
-	public boolean deleteBlog(@PathVariable("blog_id") Blog blog_id)
-	{
-		return blogService.deleteBlog(blog_id);
+	@DeleteMapping("delete-blog/{blogId}")
+	public boolean deleteBlog(@PathVariable("blogId") int blogId) {
+		return blogService.deleteBlog(blogId);
 	}
 	
-	@GetMapping("blog/{blog_id}")
-	public Blog blogById(@PathVariable("blog_id") int blog_id)
+	@GetMapping("blog/{blogId}")
+	public Blog blogById(@PathVariable("blogId") int blogId)
 	{
-		return blogService.getBlogById(blog_id);
+		return blogService.getBlogById(blogId);
 	}
 	
 	@PostMapping("update-blog/{blog}")

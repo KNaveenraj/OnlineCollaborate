@@ -18,33 +18,32 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Component
 @Entity
-public class Blog extends DomainResponse implements Serializable {
+public class Blog extends DomainResponse implements Serializable{
 	
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID=1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	int blogId;
-	String blogTitle,blogContent;
+	String blogTitel, blogContent;
 	LocalDate blogPosted;
 	String status;
-	int noOfLikes,noOfComments,noOfView;
+	int noOfLikes,noFoComments, noOfViews;
 	int userId;
 	String username;
-	@OneToMany(mappedBy="blog",fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="blog", fetch=FetchType.EAGER,cascade=CascadeType.ALL)
 	@JsonManagedReference
 	List<BlogComments> blogComments;
-	
 	public int getBlogId() {
 		return blogId;
 	}
 	public void setBlogId(int blogId) {
 		this.blogId = blogId;
 	}
-	public String getBlogTitle() {
-		return blogTitle;
+	public String getBlogTitel() {
+		return blogTitel;
 	}
-	public void setBlogTitle(String blogTitle) {
-		this.blogTitle = blogTitle;
+	public void setBlogTitel(String blogTitel) {
+		this.blogTitel = blogTitel;
 	}
 	public String getBlogContent() {
 		return blogContent;
@@ -70,17 +69,17 @@ public class Blog extends DomainResponse implements Serializable {
 	public void setNoOfLikes(int noOfLikes) {
 		this.noOfLikes = noOfLikes;
 	}
-	public int getNoOfComments() {
-		return noOfComments;
+	public int getNoFoComments() {
+		return noFoComments;
 	}
-	public void setNoOfComments(int noOfComments) {
-		this.noOfComments = noOfComments;
+	public void setNoFoComments(int noFoComments) {
+		this.noFoComments = noFoComments;
 	}
-	public int getNoOfView() {
-		return noOfView;
+	public int getNoOfViews() {
+		return noOfViews;
 	}
-	public void setNoOfView(int noOfView) {
-		this.noOfView = noOfView;
+	public void setNoOfViews(int noOfViews) {
+		this.noOfViews = noOfViews;
 	}
 	public int getUserId() {
 		return userId;
@@ -99,9 +98,6 @@ public class Blog extends DomainResponse implements Serializable {
 	}
 	public void setBlogComments(List<BlogComments> blogComments) {
 		this.blogComments = blogComments;
-	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
 	}
 	
 	

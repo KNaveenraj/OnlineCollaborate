@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Entity
 public class User extends DomainResponse implements Serializable {
 	
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID=1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int userId;
@@ -22,14 +22,11 @@ public class User extends DomainResponse implements Serializable {
 	private String lastName;
 	private String username;
 	private String password;
-	@Transient
-	private String confirmPassword;
 	private String email;
 	private String role;
 	private String status;
-	private boolean isOnline;
-	private boolean enabled;
-	
+	private String isOnline;
+	private String enabled;
 	public int getUserId() {
 		return userId;
 	}
@@ -60,12 +57,6 @@ public class User extends DomainResponse implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getConfirmPassword() {
-		return confirmPassword;
-	}
-	public void setConfirmPassword(String confirmPassword) {
-		this.confirmPassword = confirmPassword;
-	}
 	public String getEmail() {
 		return email;
 	}
@@ -84,18 +75,18 @@ public class User extends DomainResponse implements Serializable {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public boolean isOnline() {
+	public String getIsOnline() {
 		return isOnline;
 	}
-	public void setOnline(boolean isOnline) {
+	public void setIsOnline(String isOnline) {
 		this.isOnline = isOnline;
 	}
-	public boolean isEnabled() {
+	public String getEnabled() {
 		return enabled;
 	}
-	public void setEnabled(boolean enabled) {
+	public void setEnabled(String enabled) {
 		this.enabled = enabled;
 	}
 	
-	
+
 }

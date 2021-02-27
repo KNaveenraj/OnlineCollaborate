@@ -10,18 +10,18 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.coll.OnlineCollaborate.dao.IBlogDao;
 import com.coll.OnlineCollaborate.model.Blog;
-
+import com.coll.OnlineCollaborate.model.User;
 
 @Repository("blogDao")
 @Transactional
-public class BlogDaoImpl implements IBlogDao {
+public class BlogDaoImpl implements IBlogDao{
 
 	@Autowired
 	SessionFactory sessionFactory;
 	@Override
 	public List<Blog> getAllBlogs() {
-	
 		return sessionFactory.getCurrentSession().createQuery("from Blog",Blog.class).getResultList();
+
 	}
 
 	@Override
@@ -32,26 +32,23 @@ public class BlogDaoImpl implements IBlogDao {
 	}
 
 	@Override
-	public List<Blog> getUsersBlogs(int userId) {
-		String q="from Blog where userId='"+userId+"'";
-		Query query=sessionFactory.getCurrentSession().createQuery(q);
-		return query.getResultList();
+	public List<Blog> getUsersBlogs(int id) {
+		return sessionFactory.getCurrentSession().createQuery("from Blog",Blog.class).getResultList();
 	}
 
 	@Override
 	public Blog getBlogById(int blogId) {
-		return sessionFactory.getCurrentSession().get(Blog.class,Integer.valueOf(blogId));
+		return sessionFactory.getCurrentSession().get(Blog.class, Integer.valueOf(blogId));
+
 	}
 
 	@Override
 	public boolean addBlog(Blog blog) {
-		try
-		{
+		try {
 			sessionFactory.getCurrentSession().save(blog);
 			return true;
 		}
-		catch(Exception ex)
-		{
+		catch(Exception ex) {
 			ex.printStackTrace();
 			return false;
 		}
@@ -59,32 +56,26 @@ public class BlogDaoImpl implements IBlogDao {
 
 	@Override
 	public boolean updateBlog(Blog blog) {
-		try
-		{
+		try {
 			sessionFactory.getCurrentSession().update(blog);
 			return true;
 		}
-		catch(Exception ex)
-		{
+		catch(Exception ex) {
 			ex.printStackTrace();
 			return false;
 		}
 	}
 
 	@Override
-	public boolean deleteBlog(Blog blogId) {
-		try
-		{
-			sessionFactory.getCurrentSession().delete(blogId);
+	public boolean deleteBlog(int blogId) {
+		try {
+			sessionFactory.getCurrentSession().delete(getBlogById(blogId));
 			return true;
 		}
-		catch(Exception ex)
-		{
+		catch(Exception ex) {
 			ex.printStackTrace();
 			return false;
 		}
 	}
-
-	
 
 }

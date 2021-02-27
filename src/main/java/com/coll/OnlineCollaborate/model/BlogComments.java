@@ -2,6 +2,7 @@ package com.coll.OnlineCollaborate.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Locale;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,23 +18,21 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 @Component
 @Entity
 public class BlogComments implements Serializable {
-
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID=1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	int blogCommentId;
 	int userId;
 	String username;
 	String userProfileId;
-	String title;
-	int noOfLikes;
+	String titel;
+	int onOfLikes;
 	String blogComment;
 	LocalDate currentDate;
 	@ManyToOne
 	@JoinColumn(name="BlogId")
-	@JsonBackReference
 	Blog blog;
-	
+	@JsonBackReference
 	public int getBlogCommentId() {
 		return blogCommentId;
 	}
@@ -58,17 +57,20 @@ public class BlogComments implements Serializable {
 	public void setUserProfileId(String userProfileId) {
 		this.userProfileId = userProfileId;
 	}
-	public String getTitle() {
-		return title;
+	public String getTitel() {
+		return titel;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setTitel(String titel) {
+		this.titel = titel;
 	}
-	public int getNoOfLikes() {
-		return noOfLikes;
+	public int getOnOfLikes() {
+		return onOfLikes;
 	}
-	public void setNoOfLikes(int noOfLikes) {
-		this.noOfLikes = noOfLikes;
+	public void setOnOfLikes(int onOfLikes) {
+		this.onOfLikes = onOfLikes;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 	public String getBlogComment() {
 		return blogComment;
@@ -88,9 +90,8 @@ public class BlogComments implements Serializable {
 	public void setBlog(Blog blog) {
 		this.blog = blog;
 	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
 	
+	
+	
+
 }

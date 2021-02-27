@@ -8,34 +8,32 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.coll.OnlineCollaborate.dao.IBlogCommentsDao;
+import com.coll.OnlineCollaborate.model.Blog;
 import com.coll.OnlineCollaborate.model.BlogComments;
 
 @Repository("blogCommentsDao")
 @Transactional
-public class BlogCommentsDaoImpl implements IBlogCommentsDao{
+public class BlogCommentsDaoImpl implements IBlogCommentsDao {
 
 	@Autowired
 	SessionFactory sessionFactory;
-
 	@Override
 	public List<BlogComments> getAllBlogComments() {
-		return sessionFactory.getCurrentSession().createQuery("from BlogComments",BlogComments.class).getResultList();
+		return sessionFactory.getCurrentSession().createQuery("from BlogComments", BlogComments.class).getResultList();
 	}
 
 	@Override
-	public BlogComments getBlogCommentsById(int blogCommentId) {
-		return sessionFactory.getCurrentSession().get(BlogComments.class,Integer.valueOf(blogCommentId));
+	public BlogComments getBlogCommentsById(int blogId) {
+		return sessionFactory.getCurrentSession().get(BlogComments.class, Integer.valueOf(blogId));
 	}
 
 	@Override
 	public boolean addBlogComments(BlogComments blogComments) {
-		try
-		{
+		try {
 			sessionFactory.getCurrentSession().save(blogComments);
 			return true;
 		}
-		catch(Exception ex)
-		{
+		catch(Exception ex) {
 			ex.printStackTrace();
 			return false;
 		}
@@ -43,35 +41,31 @@ public class BlogCommentsDaoImpl implements IBlogCommentsDao{
 
 	@Override
 	public boolean updateBlogComments(BlogComments blogComments) {
-		try
-		{
+		try {
 			sessionFactory.getCurrentSession().update(blogComments);
 			return true;
 		}
-		catch(Exception ex)
-		{
+		catch(Exception ex) {
 			ex.printStackTrace();
 			return false;
 		}
 	}
 
 	@Override
-	public boolean deleteBlogComments(BlogComments blogCommentId) {
-		try
-		{
-			sessionFactory.getCurrentSession().delete(blogCommentId);
+	public boolean deleteBlogComments(int blogCommentsId) {
+		try {
+			sessionFactory.getCurrentSession().delete(getBlogCommentsById(blogCommentsId));
 			return true;
 		}
-		catch(Exception ex)
-		{
+		catch(Exception ex) {
 			ex.printStackTrace();
 			return false;
 		}
 	}
 
 	@Override
-	public List<BlogComments> getCommnetsByBlogId(int blogId) {
-		return (List<BlogComments>) sessionFactory.getCurrentSession().get(BlogComments.class,Integer.valueOf(blogId));
-
+	public List<BlogComments> getCommentsbyBlogId(int blogId) {
+     		return (List<BlogComments>) sessionFactory.getCurrentSession().get(BlogComments.class,Integer.valueOf(blogId));
 	}
+
 }

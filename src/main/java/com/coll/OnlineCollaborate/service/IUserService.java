@@ -5,15 +5,17 @@ import java.util.List;
 import com.coll.OnlineCollaborate.model.User;
 
 public interface IUserService {
-
 	List<User> userListbyStatus(String status);
-	List<User> getAllUsers();
+	List<User> getAllusers();
 	User getUserById(int userId);
-	User getUserByUsername(String username);
+	User getUserByName(String username);
 	User validateUser(User user);
 	boolean addUser(User user);
 	boolean updateUser(User user);
 	boolean deleteUser(int userId);
-	boolean deactivateUser(int userId);
-	boolean updateUserProfile(String file,Integer userId);
+	boolean deactiveUser(int userId);
+	boolean activeUser(int userId);
+	List<User> getAllDeactiveUser();
+	boolean updateUserProfile(String file, Integer userId);
+
 }

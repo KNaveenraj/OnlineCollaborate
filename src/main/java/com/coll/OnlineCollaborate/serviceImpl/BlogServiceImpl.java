@@ -1,5 +1,6 @@
 package com.coll.OnlineCollaborate.serviceImpl;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,9 +8,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.coll.OnlineCollaborate.dao.IBlogDao;
-
 import com.coll.OnlineCollaborate.model.Blog;
 import com.coll.OnlineCollaborate.service.IBlogService;
+
 
 
 @Service
@@ -18,7 +19,7 @@ public class BlogServiceImpl implements IBlogService {
 
 	@Autowired
 	IBlogDao blogDao;
-
+	
 	@Override
 	public List<Blog> getAllBlogs() {
 		return blogDao.getAllBlogs();
@@ -30,8 +31,8 @@ public class BlogServiceImpl implements IBlogService {
 	}
 
 	@Override
-	public List<Blog> getUsersBlogs(int userId) {
-		return blogDao.getUsersBlogs(userId);
+	public List<Blog> getUsersBlogs(int blogId) {
+		return blogDao.getUsersBlogs(blogId);
 	}
 
 	@Override
@@ -41,7 +42,7 @@ public class BlogServiceImpl implements IBlogService {
 
 	@Override
 	public boolean addBlog(Blog blog) {
-	return blogDao.addBlog(blog);
+		return blogDao.addBlog(blog);
 	}
 
 	@Override
@@ -50,7 +51,9 @@ public class BlogServiceImpl implements IBlogService {
 	}
 
 	@Override
-	public boolean deleteBlog(Blog blogId) {
+	public boolean deleteBlog(int blogId) {
 		return blogDao.deleteBlog(blogId);
 	}
+
+	
 }

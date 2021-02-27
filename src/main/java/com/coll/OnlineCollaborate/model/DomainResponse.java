@@ -2,34 +2,28 @@ package com.coll.OnlineCollaborate.model;
 
 public class DomainResponse {
 
-	int reponseCode;
+	int responseCode;
 	String responseMessage;
 	public DomainResponse() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	public DomainResponse(int reponseCode, String responseMessage) {
+	public DomainResponse(int responseCode, String responseMessage) {
 		super();
-		this.reponseCode = reponseCode;
+		this.responseCode = responseCode;
 		this.responseMessage = responseMessage;
 	}
-
-	public int getReponseCode() {
-		return reponseCode;
+	public int getResponseCode() {
+		return responseCode;
 	}
-
-	public void setReponseCode(int reponseCode) {
-		this.reponseCode = reponseCode;
+	public void setResponseCode(int responseCode) {
+		this.responseCode = responseCode;
 	}
-
 	public String getResponseMessage() {
 		return responseMessage;
 	}
-
 	public void setResponseMessage(String responseMessage) {
 		this.responseMessage = responseMessage;
 	}
-	
 	
 }

@@ -12,21 +12,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
+import com.coll.OnlineCollaborate.model.Blog;
 import com.coll.OnlineCollaborate.model.BlogComments;
 import com.coll.OnlineCollaborate.service.IBlogCommentsService;
-
 
 @RestController
 @CrossOrigin(origins="http://localhost:4200")
 @RequestMapping(value="/api")
 public class BlogCommentsController {
-
+	
 	@Autowired
 	IBlogCommentsService blogCommentsService;
 	
 	@PostMapping("save-blogComments")
-	public boolean saveBlogComments(@RequestBody BlogComments blogComments)
+	public boolean saveBlog(@RequestBody BlogComments blogComments)
 	{
 		return blogCommentsService.addBlogComments(blogComments);
 	}
@@ -37,10 +36,9 @@ public class BlogCommentsController {
 		return blogCommentsService.getAllBlogComments();
 	}
 	
-	@DeleteMapping("delete-blogComments/{blogComment_id}")
-	public boolean deleteBlogComments(@PathVariable("blogComment_id") BlogComments blogComment_id)
-	{
-		return blogCommentsService.deleteBlogComments(blogComment_id);
+	@DeleteMapping("delete-blogComments/{blogComments_id}")
+	public boolean deleteBlogComments(@PathVariable("blogComments_id") int blogComments_id) {
+		return blogCommentsService.deleteBlogComments(blogComments_id);
 	}
 	
 	@GetMapping("blogComments/{blogComments_id}")
@@ -50,8 +48,9 @@ public class BlogCommentsController {
 	}
 	
 	@PostMapping("update-blogComments/{blogComments}")
-	public boolean updateBlog(@PathVariable("blogComments") BlogComments blogComments)
+	public boolean updateBlogComments(@PathVariable("blogComments") BlogComments blogComments)
 	{
 		return blogCommentsService.updateBlogComments(blogComments);
 	}
+
 }
