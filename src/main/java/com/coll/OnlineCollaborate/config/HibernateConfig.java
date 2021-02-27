@@ -37,7 +37,7 @@ public class HibernateConfig {
 	public static final String DATABASE_DRIVER="com.mysql.cj.jdbc.Driver";
 	public static final String DATABASE_DIALECT="org.hibernate.dialect.MySQLDialect";
 	public static final String DATABASE_USERNAME="root";
-	public static final String DATABASE_PASSWORD="ganesh@7";
+	public static final String DATABASE_PASSWORD="krishnanCse@76";
 	
 	@Bean(name="dataSource")
 	public DataSource getDataSource() {
