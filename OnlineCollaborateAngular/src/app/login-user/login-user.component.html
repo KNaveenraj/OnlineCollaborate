@@ -1,20 +1,9 @@
-<div class="login-box">
-  <h2>Login</h2>
-  <form>
-    <div class="user-box">
-      <input type="text" name="" required="">
-      <label>Username</label>
-    </div>
-    <div class="user-box">
-      <input type="password" name="" required="">
-      <label>Password</label>
-    </div>
-    <a href="#">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      Submit
-    </a>
+<div class="main">
+  <form [formGroup]="loginform" action="#" #validateuser="ngForm" (ngSubmit)="validateUser()" class="form1">
+  <p class="sign" align="center">Sign in</p>
+  
+    <input type="text" class="form-control" name="username" required placeholder="Username" formControlName="username">
+    <input type="password" class="form-control" name="password" required placeholder="Password" formControlName="password">
+    <button type="submit" class="submit" align="center">Login</button>
   </form>
 </div>

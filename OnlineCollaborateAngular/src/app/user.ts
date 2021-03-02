@@ -8,7 +8,7 @@ export class User {
 	email!: String;
 	role!: String;
 	status!: String;
-	isOnline!: boolean;
-	enabled!: boolean;
+	isOnline!: String;
+	enabled!: String
 
 }

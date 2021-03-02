@@ -28,7 +28,7 @@ registrationform=new FormGroup({
   role:new FormControl()
     });  
 
-    register(register: any)
+    register()
     {
       this.user=new User();
       this.user.firstName=this.FirstName!.value;
@@ -39,14 +39,14 @@ registrationform=new FormGroup({
       this.user.email=this.Email!.value;
       this.user.role=this.Role!.value;
       if(this.user.role==="Admin"){
-        this.user.enabled=true;
+        this.user.enabled="true";
         this.user.status="Active";
       }
       else{
-        this.user.enabled=false;
+        this.user.enabled="false";
         this.user.status="Inactive";
       }
-      this.user.isOnline=false;
+      this.user.isOnline="false";
       this.submitted = true;  
       console.log(this.user.firstName);
       this.save();  

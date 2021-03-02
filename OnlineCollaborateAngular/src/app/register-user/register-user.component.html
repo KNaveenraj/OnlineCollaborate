@@ -3,7 +3,7 @@
   <div class="col-sm-4"></div>  
   <div class="col-sm-4" >  
     <div [hidden]="submitted" style="width: 400px;">  
-      <form [formGroup]="registrationform" (ngSubmit)="register(register)">  
+      <form [formGroup]="registrationform" (ngSubmit)="register()">  
           <div class="form-group">  
               <label for="firstName">First Name</label>  
               <input type="text" class="form-control"  formControlName="firstName" data-toggle="tooltip"   

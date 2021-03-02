@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../user.service';  
-import {FormControl,FormGroup,Validators} from '@angular/forms';  
-import { User } from '../user';  
+import { UserService } from '../user.service';
+import { User } from '../user';
+import { Observable, Subject } from 'rxjs';
+import { Validators, FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { DataTablesModule } from 'angular-datatables';
+
 @Component({
   selector: 'app-login-user',
   templateUrl: './login-user.component.html',
@@ -9,43 +12,45 @@ import { User } from '../user';
 })
 export class LoginUserComponent implements OnInit {
 
-  constructor(private userservice:UserService) { }
-  user : User=new User();  
-  submitted = false;  
-   
+  user : User=new User();
+  currentUser : any;  
+  constructor(private userService: UserService) { }
+
   ngOnInit(): void {
-    this.submitted=false; 
+    
   }
 
-  loginForm: FormGroup = new FormGroup({
-  username:new FormControl('' , [Validators.required , Validators.minLength(5) ] ), 
-  password:new FormControl('' , [Validators.required , Validators.minLength(5) ] )
-  }) ;
+  loginform=new FormGroup({
+    username:new FormControl('',[Validators.required]),
+    password:new FormControl('',[Validators.required])
+  })
 
-  loginUser(_loginUser: any)
-  {
+  validateUser() {
     this.user=new User();
-    this.user.username=this.Username?.value;
-    this.user.password=this.Password?.value;
-    this.save();  
+    this.user.username=this.Username!.value;
+    this.user.password=this.Password!.value;
+    
+    this.userService.checkUser(this.user).subscribe (
+      data => {
+        console.log(data);
+        if(data!=null) {
+          this.currentUser=data;
+          console.log(this.currentUser.firstName);
+        }
+        else {
+          console.log("Object Empty");
+        }
+      },
+      error => console.log(error)
+    )
   }
-  save() {  
-    this.userservice.getUserList()  
-      .subscribe((data: any) => console.log(data), (error: any) => console.log(error));  
-    this.user = new User();  
-  }  
-  
-  get Username(){  
-    return this.loginForm.get('username');  
-  }  
 
-  get Password(){  
-    return this.loginForm.get('password');  
-  }  
+  get Username() {
+    return this.loginform.get ('username');
+  }
 
-  loginUsersForm(){  
-    this.submitted=false;  
-    this.loginForm.reset();  
-  }  
+  get Password() {
+    return this.loginform.get ('password');
+  }
+
 }
-
