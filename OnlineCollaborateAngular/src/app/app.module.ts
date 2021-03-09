@@ -10,7 +10,7 @@ import { RegisterUserComponent } from './register-user/register-user.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { LoginUserComponent } from './login-user/login-user.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavComponent } from './nav/nav.component';
+import { NavigationComponent } from './navigation/navigation.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -21,6 +21,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { ActiveUserComponent } from './active-user/active-user.component';
 import { HomeComponent } from './home/home.component';
+import { NavigationUserComponent } from './navigation-user/navigation-user.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -28,11 +30,13 @@ import { HomeComponent } from './home/home.component';
     RegisterUserComponent,
     UserListComponent,
     LoginUserComponent,
-    NavComponent,
+    NavigationComponent,
     UserProfileComponent,
     BlogListComponent,
     ActiveUserComponent,
-    HomeComponent
+    HomeComponent,
+    NavigationUserComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

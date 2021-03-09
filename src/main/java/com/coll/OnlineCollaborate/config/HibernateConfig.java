@@ -28,7 +28,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 		              @ComponentScan("config"),
 		              @ComponentScan("serviceImpl"),
 		              @ComponentScan("service"),
-		             @ComponentScan("service")})
+		             })
 @EnableAutoConfiguration(exclude = {HibernateJpaAutoConfiguration.class})		
 @EnableTransactionManagement
 public class HibernateConfig {

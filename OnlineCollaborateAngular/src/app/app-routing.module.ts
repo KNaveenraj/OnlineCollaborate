@@ -6,14 +6,30 @@ import { LoginUserComponent } from './login-user/login-user.component';
 import {ActiveUserComponent} from './active-user/active-user.component';
 import {BlogListComponent } from './blog-list/blog-list.component';
 import {UserProfileComponent} from './user-profile/user-profile.component';
+import { HomeComponent } from './home/home.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { NavigationUserComponent } from './navigation-user/navigation-user.component';
+
 const routes: Routes = [
-  { path: '', redirectTo: 'login-user', pathMatch: 'full' },  
-  { path: 'user-list', component: UserListComponent },  
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  {path:'home', component: HomeComponent},
+  {path:'nav/:Id', component:NavigationComponent, 
+  children: [
+    { path: 'user-list', component: UserListComponent },
+    { path: 'active-user' , component: ActiveUserComponent},
+  { path: 'blog-list' , component: BlogListComponent},
+  { path: 'user-profile/:Id' , component: UserProfileComponent}  
+  ]
+} ,
+  {path:'nav-user/:Id', component:NavigationUserComponent,
+   children:[
+    { path: 'blog-list' , component: BlogListComponent},
+    { path: 'user-profile/:Id' , component: UserProfileComponent}
+   ]
+},
   { path: 'register-user', component: RegisterUserComponent },
   { path: 'login-user' , component: LoginUserComponent} ,
-  { path: 'active-user' , component: ActiveUserComponent},
-  { path: 'blog-list' , component: BlogListComponent},
-  { path: 'user-profile' , component: UserProfileComponent} 
+   
   ];
   
 

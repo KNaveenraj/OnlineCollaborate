@@ -1,14 +1,30 @@
+<div class="container">
+    <div class="navbar">
+        <div class="menu">
+            <h1 class="logo"><span>Relaxato  </span>City</h1>
+           
+        </div>
+    </div>
     <div class="main-container">
         <div class="main">
             <header>
-                <div class="overlay">
+                <div class="overlay" id="one">
                     <h2 class="title">Welcome to Relaxato City</h2>
-                <br>
-                <br>   
-                <br>
-                    <a href="" class="btn">Sign / SignUp</a>
+                
+                    <div class="bts">
+                       <a mat-list-item  class="nav-link" (click)="logInUser()" class="btn">Login</a>/<a mat-list-item   class="nav-link" (click)="RegUser()" class="btn">Resgistration</a>  
+                      </div>
                 </div>
             </header>
         </div>
-       
+        <div class="shadow one"></div>
+        <div class="shadow two"></div>
     </div>
+</div>
+<div class="pages">
+    <app-login-user></app-login-user>
+</div>
+
+<div class="pagess">
+    <app-register-user></app-register-user>
+</div>

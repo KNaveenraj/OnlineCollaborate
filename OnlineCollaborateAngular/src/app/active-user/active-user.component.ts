@@ -18,7 +18,7 @@ export class ActiveUserComponent implements OnInit {
 
   constructor(private userservice: UserService) { }
   
-  users!: Observable <User[]>;
+  users:any;
   user: User =new User();
   deactiveList: any;
   isEnabled= false;

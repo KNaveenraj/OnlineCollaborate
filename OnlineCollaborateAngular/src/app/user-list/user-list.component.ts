@@ -17,7 +17,7 @@ export class UserListComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject();
 
-  users!: Observable<any[]>;
+  users:any;
   user: User = new User();
   deleteMessage = false;
   userlist: any;

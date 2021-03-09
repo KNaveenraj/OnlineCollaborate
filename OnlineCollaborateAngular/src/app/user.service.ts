@@ -42,4 +42,9 @@ export class UserService {
         checkUser(user: object): Observable<any> {
               return this.http.post(`${this.baseUrl}`+"validate-user", user);
             }
+
+            logoutUser(userId: number): Observable<Object> {  
+              return this.http.post(`${this.baseUrl}/logout-user/${userId}`, {responseType: 'text'});  
+                } 
 }
+

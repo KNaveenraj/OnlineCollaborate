@@ -87,4 +87,8 @@ registrationform=new FormGroup({
       this.registrationform.reset();  
     }  
 
+    logInUser() {
+      $(".pages").css("visibility","visible");
+      $(".peru").css("visibility","hidden");
+    }
   }
