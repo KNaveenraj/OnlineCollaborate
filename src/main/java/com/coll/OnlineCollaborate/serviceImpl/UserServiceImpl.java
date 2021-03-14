@@ -92,4 +92,10 @@ public class UserServiceImpl implements IUserService {
 		// TODO Auto-generated method stub
 		return userDao.logoutUser(userId);
 	}
+
+	@Override
+	public List<User> getAllActiveUser() {
+		// TODO Auto-generated method stub
+		return userDao.getAllActiveUser();
+	}
 }

@@ -1,0 +1,31 @@
+<h1 style="font-weight: bold; font-style: italic; text-align: center; ">Users Deactive List</h1><br>
+<div class="panel">
+    <div class="panel panel-default">
+      
+     
+
+            <div class="panel-body">
+                <table class="table tabele-hover table-sm" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+                <thead class="thead-light">
+                    <tr>
+                        <th>UserID</th>
+                        <th>Name</th>
+                        <th>UserName</th>
+                        <th>Enabled</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users">
+                        <td>{{user.userId}}</td>
+                        <td>{{user.firstName }}</td>
+                        <td>{{user.username}}</td>
+                        <td>{{user.enabled}}</td>
+                        <td> <button (click)="enabledUser(user.userId)" class='btn btn-info' data-toggle="modal"
+                            data-target="#myModal">Deactivate</button> &nbsp; &nbsp;</td>
+                    </tr>
+                    
+                </tbody>
+                </table>
+            </div>
+    </div>
+</div>

@@ -39,6 +39,15 @@ export class UserService {
           return this.http.post(`${this.baseUrl}/active-user/${userId}`, {responseType: 'text'});  
             } 
 
+
+            activeList():Observable<any> {  
+              return this.http.get(`${this.baseUrl}`+'active-list');
+            }
+    
+            deactiveUser(userId: number): Observable<Object> {  
+              return this.http.post(`${this.baseUrl}/deactive-user/${userId}`, {responseType: 'text'});  
+                } 
+
         checkUser(user: object): Observable<any> {
               return this.http.post(`${this.baseUrl}`+"validate-user", user);
             }
@@ -46,5 +55,9 @@ export class UserService {
             logoutUser(userId: number): Observable<Object> {  
               return this.http.post(`${this.baseUrl}/logout-user/${userId}`, {responseType: 'text'});  
                 } 
+
+                updateUserProfile(userId: number, value: any): Observable<Object> {  
+                  return this.http.post(`${this.baseUrl}/update-userprofile/${userId}`, value);  
+                    } 
 }
 

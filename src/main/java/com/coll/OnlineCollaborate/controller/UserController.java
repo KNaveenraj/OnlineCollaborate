@@ -23,7 +23,8 @@ public class UserController {
 	@Autowired
 	IUserService userService;
 	
-	@PostMapping("save-user")public boolean saveUser(@RequestBody User user) {
+	@PostMapping("save-user")
+	public boolean saveUser(@RequestBody User user) {
 		return userService.addUser(user);
 	}
 	
@@ -57,6 +58,17 @@ public class UserController {
 	public boolean activeUser(@RequestBody User user, @PathVariable("userId") int userId) {
 		return userService.activeUser(userId);
 	}
+	
+	@GetMapping("active-list")
+	public List<User> AllActiveUser(){
+		return userService.getAllActiveUser();
+	}
+
+	@PostMapping("deactive-user/{userId}")
+	public boolean deactiveUser(@RequestBody User user, @PathVariable("userId") int userId) {
+		return userService.deactiveUser(userId);
+	}
+	
 	
 	@PostMapping("validate-user")
 	public User validateUser(@RequestBody User user) {

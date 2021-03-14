@@ -12,14 +12,18 @@ import { param } from 'jquery';
   styleUrls: ['./navigation-user.component.scss']
 })
 export class NavigationUserComponent implements OnInit {
+  firstName(firstName: any) {
+    throw new Error('Method not implemented.');
+  }
 
-  Id?:number;
+  Id!:number;
   user:any;
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
       shareReplay()
     );
+
     constructor(private breakpointObserver: BreakpointObserver, private route: ActivatedRoute, private userservice: UserService, private router:Router) {}
     ngOnInit(){
        this.route.params.subscribe (

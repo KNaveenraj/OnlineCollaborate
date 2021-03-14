@@ -163,4 +163,10 @@ public class UserDaoImpl implements IUserDao {
 			return false;
 		}
 	}
+
+	@Override
+	public List<User> getAllActiveUser() {
+		  return sessionFactory.getCurrentSession().createQuery("from User where enabled='true'",User.class).getResultList();
+
+	}
 }

@@ -35,7 +35,6 @@ BlogCommentId int not null auto_increment,
 UserId int,
 UserName varchar(20),
 UserProfileId varchar(20),
-Title varchar(30),
 NoOfLikes int,
 BlogComment varchar(20),
 CurrentDate date,
@@ -44,9 +43,11 @@ primary key(BlogCommentId)
 );
 
 insert into User(FirstName,LastName,UserName,Password,Email,Role,Status,IsOnline,Enabled) 
-values("Naveenraj","K","Naveen101","naveen@123","naveenraj29k@gmail.com","Admin","Active","false","false");
+values("Naveenraj","K","Naveen101","naveen@123","naveenraj29k@gmail.com","Admin","Active","false","true");
 
-select * from User;
+select * from Blog;
 
-drop table User;
+drop table BlogComments;
+
+
 

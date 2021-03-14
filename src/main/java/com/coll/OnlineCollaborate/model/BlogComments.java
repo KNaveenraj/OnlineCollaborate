@@ -25,14 +25,14 @@ public class BlogComments implements Serializable {
 	int userId;
 	String username;
 	String userProfileId;
-	String titel;
 	int onOfLikes;
 	String blogComment;
 	LocalDate currentDate;
 	@ManyToOne
 	@JoinColumn(name="BlogId")
-	Blog blog;
 	@JsonBackReference
+	Blog blog;
+	
 	public int getBlogCommentId() {
 		return blogCommentId;
 	}
@@ -57,12 +57,7 @@ public class BlogComments implements Serializable {
 	public void setUserProfileId(String userProfileId) {
 		this.userProfileId = userProfileId;
 	}
-	public String getTitel() {
-		return titel;
-	}
-	public void setTitel(String titel) {
-		this.titel = titel;
-	}
+	
 	public int getOnOfLikes() {
 		return onOfLikes;
 	}

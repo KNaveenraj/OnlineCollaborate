@@ -14,6 +14,7 @@ import javax.persistence.OneToMany;
 
 import org.springframework.stereotype.Component;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Component
@@ -24,10 +25,10 @@ public class Blog extends DomainResponse implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	int blogId;
-	String blogTitel, blogContent;
+	String blogTitle, blogContent;
 	LocalDate blogPosted;
 	String status;
-	int noOfLikes,noFoComments, noOfViews;
+	int noOfLikes,noOfComments, noOfViews;
 	int userId;
 	String username;
 	@OneToMany(mappedBy="blog", fetch=FetchType.EAGER,cascade=CascadeType.ALL)
@@ -39,11 +40,11 @@ public class Blog extends DomainResponse implements Serializable{
 	public void setBlogId(int blogId) {
 		this.blogId = blogId;
 	}
-	public String getBlogTitel() {
-		return blogTitel;
+	public String getBlogTitle() {
+		return blogTitle;
 	}
-	public void setBlogTitel(String blogTitel) {
-		this.blogTitel = blogTitel;
+	public void setBlogTitle(String blogTitle) {
+		this.blogTitle = blogTitle;
 	}
 	public String getBlogContent() {
 		return blogContent;
@@ -69,11 +70,11 @@ public class Blog extends DomainResponse implements Serializable{
 	public void setNoOfLikes(int noOfLikes) {
 		this.noOfLikes = noOfLikes;
 	}
-	public int getNoFoComments() {
-		return noFoComments;
+	public int getNoOfComments() {
+		return noOfComments;
 	}
-	public void setNoFoComments(int noFoComments) {
-		this.noFoComments = noFoComments;
+	public void setNoOfComments(int noOfComments) {
+		this.noOfComments = noOfComments;
 	}
 	public int getNoOfViews() {
 		return noOfViews;

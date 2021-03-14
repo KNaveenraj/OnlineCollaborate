@@ -23,6 +23,13 @@ import { ActiveUserComponent } from './active-user/active-user.component';
 import { HomeComponent } from './home/home.component';
 import { NavigationUserComponent } from './navigation-user/navigation-user.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
+import { DeactivateUserComponent } from './deactivate-user/deactivate-user.component';
+import {MatProgressBarModule} from "@angular/material/progress-bar";
+import { UpdateUserprofileComponent } from './update-userprofile/update-userprofile.component';
+import { AddPostComponent } from './add-post/add-post.component';
+
+
 
 @NgModule({
   declarations: [
@@ -36,14 +43,21 @@ import { AboutUsComponent } from './about-us/about-us.component';
     ActiveUserComponent,
     HomeComponent,
     NavigationUserComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    DeactivateUserComponent,
+    AddPostComponent,
+    UpdateUserprofileComponent,
+ 
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,  
+    HttpClientModule, 
+    EditorModule, 
+    MatProgressBarModule,
     DataTablesModule, BrowserAnimationsModule, LayoutModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule
     ],
   providers: [],

@@ -13,6 +13,10 @@ import { ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent  implements OnInit {
+  firstName(firstName: any) {
+    throw new Error('Method not implemented.');
+  }
+
 
   Id?:number;
   user:any;
@@ -31,9 +35,7 @@ export class UserProfileComponent  implements OnInit {
            console.log(this.user);
          }
     )
-     }
-     
- 
+     } 
     )
  }
  }

@@ -9,22 +9,28 @@ import {UserProfileComponent} from './user-profile/user-profile.component';
 import { HomeComponent } from './home/home.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { NavigationUserComponent } from './navigation-user/navigation-user.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { DeactivateUserComponent } from './deactivate-user/deactivate-user.component';
+import { AddPostComponent } from './add-post/add-post.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   {path:'home', component: HomeComponent},
+  {path: 'about-us',component:AboutUsComponent},
   {path:'nav/:Id', component:NavigationComponent, 
   children: [
     { path: 'user-list', component: UserListComponent },
     { path: 'active-user' , component: ActiveUserComponent},
+    { path: 'deactivate-user' , component: DeactivateUserComponent},
   { path: 'blog-list' , component: BlogListComponent},
   { path: 'user-profile/:Id' , component: UserProfileComponent}  
   ]
 } ,
   {path:'nav-user/:Id', component:NavigationUserComponent,
    children:[
+    { path: 'add-post' , component: AddPostComponent},
     { path: 'blog-list' , component: BlogListComponent},
-    { path: 'user-profile/:Id' , component: UserProfileComponent}
+    { path: 'user-profile/:Id' , component: UserProfileComponent},
    ]
 },
   { path: 'register-user', component: RegisterUserComponent },

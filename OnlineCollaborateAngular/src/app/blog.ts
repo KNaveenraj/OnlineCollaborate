@@ -1,11 +1,11 @@
 export class Blog{
     blogId!:number;
-	blogTitel!: String;
+	blogTitle!: String;
     blogContent!: String;
-    blogPosted:any;
+    blogPosted!:any;
     status!: String;
 	noOfLikes!: number;
-    noFoComments!: number; 
+    noofComments!: number; 
     noOfViews!: number;
 	userId!: number;
 	username!: String;
