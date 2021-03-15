@@ -12,6 +12,8 @@ import { NavigationUserComponent } from './navigation-user/navigation-user.compo
 import { AboutUsComponent } from './about-us/about-us.component';
 import { DeactivateUserComponent } from './deactivate-user/deactivate-user.component';
 import { AddPostComponent } from './add-post/add-post.component';
+import { BlogComponent } from './blog/blog.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -28,8 +30,9 @@ const routes: Routes = [
 } ,
   {path:'nav-user/:Id', component:NavigationUserComponent,
    children:[
-    { path: 'add-post' , component: AddPostComponent},
+    { path: 'add-post/:Id' , component: AddPostComponent},
     { path: 'blog-list' , component: BlogListComponent},
+    { path: 'blog/:Id' , component: BlogComponent},
     { path: 'user-profile/:Id' , component: UserProfileComponent},
    ]
 },

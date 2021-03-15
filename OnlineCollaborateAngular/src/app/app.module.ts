@@ -28,6 +28,8 @@ import { DeactivateUserComponent } from './deactivate-user/deactivate-user.compo
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import { UpdateUserprofileComponent } from './update-userprofile/update-userprofile.component';
 import { AddPostComponent } from './add-post/add-post.component';
+import { BlogComponent } from './blog/blog.component';
+
 
 
 
@@ -47,6 +49,7 @@ import { AddPostComponent } from './add-post/add-post.component';
     DeactivateUserComponent,
     AddPostComponent,
     UpdateUserprofileComponent,
+    BlogComponent,
  
     
   ],

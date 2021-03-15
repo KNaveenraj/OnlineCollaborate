@@ -25,7 +25,7 @@ public class BlogComments implements Serializable {
 	int userId;
 	String username;
 	String userProfileId;
-	int onOfLikes;
+	int noOfLikes;
 	String blogComment;
 	LocalDate currentDate;
 	@ManyToOne
@@ -58,11 +58,11 @@ public class BlogComments implements Serializable {
 		this.userProfileId = userProfileId;
 	}
 	
-	public int getOnOfLikes() {
-		return onOfLikes;
+	public int getnoOfLikes() {
+		return noOfLikes;
 	}
-	public void setOnOfLikes(int onOfLikes) {
-		this.onOfLikes = onOfLikes;
+	public void setnoOfLikes(int onOfLikes) {
+		this.noOfLikes = noOfLikes;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;

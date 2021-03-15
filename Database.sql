@@ -19,7 +19,7 @@ primary key(UserId)
 create table Blog(
 BlogId int not null auto_increment,
 BlogTitle varchar(30),
-BlogContent varchar(200),
+BlogContent varchar(500),
 BlogPosted Date,
 Status varchar(10),
 NoOfLikes int,
@@ -45,9 +45,9 @@ primary key(BlogCommentId)
 insert into User(FirstName,LastName,UserName,Password,Email,Role,Status,IsOnline,Enabled) 
 values("Naveenraj","K","Naveen101","naveen@123","naveenraj29k@gmail.com","Admin","Active","false","true");
 
-select * from Blog;
+select * from User;
 
-drop table BlogComments;
+drop table Blog;
 
 
 

@@ -1,28 +1,44 @@
-<div class="login-box">
-  <h2>Login</h2>
-  <form [formGroup]="loginform"  (ngSubmit)="validateUser()">
-    <!--Username-->
-    <div class="user-box">
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="login-user.component.scss">
+</head>
+
+<body>
+    <div class="login-dark">
+        <form [formGroup]="loginform"  (ngSubmit)="validateUser()">
+            <h2 class="sr-only">Login Form</h2>
+            <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+  
       <input type="text" class="form-control"  formControlName="username" data-toggle="tooltip"   
                data-placement="right" title="Enter Username" placeholder="Username">   
       <div class="alert alert-danger" *ngIf = "(Username.touched) && (Username.invalid)"   
               style="margin-top: 5px;">  
                 <span *ngIf="Username.errors.required">Username is Required</span>                     
               </div>  
-    </div>
     
-    <!--Password-->
-    <div class="user-box">
+    
+    
       <input type="password" class="form-control"  formControlName="password" data-toggle="tooltip"   
       data-placement="right" title="Enter Password"  placeholder="Password"> 
    <div class="alert alert-danger" *ngIf = "(Password.touched) && (Password.invalid)"   
      style="margin-top: 5px;">  
        <span *ngIf="Password.errors.required">Password is Required</span>                    
      </div>  
-    </div>
     
-      <button type="submit" class="btn btn-success">Submit</button>  
-     
-  </form>
-</div>  
+    
 
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Log In</button></div>
+          </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -2,42 +2,44 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-
     background: linear-gradient(to right, #b92b27, #1565c0)
+
 }
 
 .row {
-    width: 300px;
-    left: 150%;
-    padding: 20px;
-    position:relative;
-    text-align:center;
-    transition: 0.25s;
-    margin-top: 125px
+    height:700px;
+    background:#475d62 url(http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg);
+    background-size:cover;
+ 
+
+  
+    
 }
 
 .row input[type="text"],
 .row input[type="password"],
 .row select {
     border: 0;
-    background: none;
-    display: block;
+    background:opacify($color: #222, $amount: 0) ;
+    display:ruby-text-container;
     margin: 10px auto;
     text-align: center;
-    border: 3px solid #3498db;
+    border: 4px solid #3498db;
     padding: 5px 10px;
     width: 200px;
     outline: none;
-    color: white;
+    color:slateblue;
     border-radius: 25px;
     transition: 0.25s
 }
 .row label{
-    color:aliceblue;
+    color:peru;
+
+  
 }
 
 .row h2,h4 {
-    color: white;
+    color:violet;
     text-transform: uppercase;
     font-weight: 500;
 }
@@ -65,23 +67,20 @@ body {
 
 .row  button[type="submit"] {
     border: 0;
-    background: none;
+    background:floralwhite;
     display: block;
-    margin: 20px auto;
+    margin: 15px auto;
     text-align: center;
-    border: 2px solid #2ecc71;
-    padding: 14px 40px;
-    outline: none;
-    color: white;
-    border-radius: 24px;
+    border: 3px solid #2ecc71;
+    padding: 10px 15px;
+    outline:deepskyblue;
+    color:darkgoldenrod;
+    border-radius: 20px;
     transition: 0.25s;
     cursor: pointer
 }
 
-.row 
-button[type="submit"]:hover {
-    background:rebeccapurple
-}
+
 
 ::placeholder {
     color:white;
